@@ -3,10 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.3.0",
+    "ajv": "^6.12.6",
     "cra-template-typescript": "1.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "schema-utils": "^3.0.0",
+    "ulid": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -31,5 +37,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.19.0",
+    "@typescript-eslint/parser": "^8.19.0",
+    "eslint": "^9.17.0",
+    "typescript": "^5.7.2"
   }
 }
