@@ -14,15 +14,20 @@ export const style = {
     height: "200px",
   },
   formWrapper: {
-    margin: "10px 10px 10px 10px",
+    margin: "10px",
     width: "100%",
-    maxWidth: "500px",
-    height: "100%",
+    maxWidth: "480px",
+    height: "auto",
     position: "absolute",
     top: "30px",
     left: "50%",
     transform: "translateX(-50%)",
     zIndex: "20",
+    boxSizing: "border-box",
+    overflow: "hidden",
+    "@media (max-width: 600px)": {
+      width: "90%",
+    },
   },
   formTitle: {
     textTransform: "uppercase",
@@ -31,17 +36,17 @@ export const style = {
     fontWeight: "bold",
   },
   formInput: {
-    minWidth: "300px",
     backgroundColor: BASIC_WHITE,
-    borderRadius: "15px",
+    borderRadius: "5px",
     "& .MuiInputBase-root": {
       width: "100%",
     },
     "& .MuiInputBase-input": {
+      paddingLeft: "10px",
       color: BASIC_BLACK,
     },
     "& .MuiOutlinedInput-root": {
-      borderRadius: "15px",
+      borderRadius: "5px",
     },
     "& .MuiOutlinedInput-notchedOutline": {
       borderColor: "transparent",
@@ -58,7 +63,6 @@ export const style = {
     backgroundColor: BASIC_WHITE,
     width: "100%",
     borderRadius: "5px",
-    overFlow: "hidden",
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
   },
   infoText: {
@@ -69,25 +73,30 @@ export const style = {
   taskItem: {
     width: "100%",
     padding: "20px 10px 20px 10px",
-    cursor: "pointer",
     alignItems: "center",
     borderBottom: `1px solid ${BASIC_GRAY}`,
   },
   taskTextUnComplete: {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
     marginLeft: "15px",
     color: BASIC_BLACK,
+    cursor: "pointer",
     "&:hover": {
       color: HOVER_BLUE,
       fontWeight: "bold",
     },
   },
   taskTextComplete: {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
     marginLeft: "15px",
     textDecoration: "line-through",
     color: BASIC_GRAY,
+    cursor: "pointer",
   },
   navigationText: {
-    padding: "5px 5px 5px 5px",
+    padding: "5px",
     fontSize: "14px",
     color: BASIC_GRAY,
     cursor: "pointer",
@@ -103,8 +112,11 @@ export const style = {
     },
   },
   navigationWrapper: {
-    margin: "10px 10px 10px 10px",
+    margin: "10px",
     justifyContent: "space-between",
     alignItems: "center",
+  },
+  iconWrapper: {
+    cursor: "pointer",
   },
 };

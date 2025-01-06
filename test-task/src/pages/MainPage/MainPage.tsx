@@ -6,6 +6,11 @@ import { ulid } from "ulid";
 import Icon from "@mdi/react";
 import { mdiCheckboxBlankCircleOutline } from "@mdi/js";
 import { mdiCheckCircle } from "@mdi/js";
+import { mdiDelete } from "@mdi/js";
+import {
+  BASIC_PURPLE,
+  DANGEROUS_RED,
+} from "../../config/constants/constants.ts";
 
 export const MainPage = () => {
   const [taskValue, setTaskValue] = useState<string>("");
@@ -73,6 +78,10 @@ export const MainPage = () => {
     );
   };
 
+  const handelDeleteIcon = (id) => {
+    setTaskData((prevTasks) => prevTasks.filter((task) => task.id !== id));
+  };
+
   return (
     <Grid2 container>
       <Grid2 sx={style.headerFon} size={12}></Grid2>
@@ -83,12 +92,19 @@ export const MainPage = () => {
           </Grid2>
           <Grid2>
             <TextField
-              type="search"
+              fullWidth
               value={taskValue}
               placeholder="Create new to do"
               onChange={(e) => handelTaskValue(e.target.value)}
               sx={style.formInput}
               onKeyDown={handelTaskData}
+              slotProps={{
+                input: {
+                  startAdornment: (
+                    <Icon path={mdiCheckboxBlankCircleOutline} size={1} />
+                  ),
+                },
+              }}
             />
           </Grid2>
           <Grid2 container direction="column" spacing={0} sx={style.taskList}>
@@ -112,26 +128,40 @@ export const MainPage = () => {
                     <Grid2
                       key={task.id}
                       container
+                      wrap="nowrap"
                       sx={style.taskItem}
-                      onClick={() => toggleIsComplete(task.id)}
                     >
-                      <Icon
-                        path={
-                          task.isComplete
-                            ? mdiCheckCircle
-                            : mdiCheckboxBlankCircleOutline
-                        }
-                        size={1}
-                      />
-                      <Typography
-                        sx={
-                          task.isComplete
-                            ? style.taskTextComplete
-                            : style.taskTextUnComplete
-                        }
+                      <Grid2
+                        onClick={() => toggleIsComplete(task.id)}
+                        sx={style.iconWrapper}
                       >
-                        {task.value}
-                      </Typography>
+                        {task.isComplete ? (
+                          <Icon
+                            path={mdiCheckCircle}
+                            size={1}
+                            color={BASIC_PURPLE}
+                          />
+                        ) : (
+                          <Icon path={mdiCheckboxBlankCircleOutline} size={1} />
+                        )}
+                      </Grid2>
+                      <Grid2
+                        sx={style.iconWrapper}
+                        onClick={() => handelDeleteIcon(task.id)}
+                      >
+                        <Icon path={mdiDelete} size={1} color={DANGEROUS_RED} />
+                      </Grid2>
+                      <Grid2 onClick={() => toggleIsComplete(task.id)}>
+                        <Typography
+                          sx={
+                            task.isComplete
+                              ? style.taskTextComplete
+                              : style.taskTextUnComplete
+                          }
+                        >
+                          {task.value}
+                        </Typography>
+                      </Grid2>
                     </Grid2>
                   ))
                 ) : (
