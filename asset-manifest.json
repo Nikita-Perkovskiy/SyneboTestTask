@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/SyneboTestTask/static/css/main.90f6920e.css",
+    "main.js": "/SyneboTestTask/static/js/main.cc40ca18.js",
+    "index.html": "/SyneboTestTask/index.html",
+    "main.90f6920e.css.map": "/SyneboTestTask/static/css/main.90f6920e.css.map",
+    "main.cc40ca18.js.map": "/SyneboTestTask/static/js/main.cc40ca18.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.90f6920e.css",
+    "static/js/main.cc40ca18.js"
+  ]
+}
