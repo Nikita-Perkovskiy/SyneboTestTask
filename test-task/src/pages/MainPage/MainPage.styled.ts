@@ -1,7 +1,10 @@
 import {
   BASIC_BLACK,
+  BASIC_GRAY,
   BASIC_PURPLE,
   BASIC_WHITE,
+  DANGEROUS_RED,
+  HOVER_BLUE,
 } from "../../config/constants/constants.ts";
 
 export const style = {
@@ -12,6 +15,7 @@ export const style = {
   },
   formWrapper: {
     margin: "10px 10px 10px 10px",
+    width: "100%",
     maxWidth: "500px",
     height: "100%",
     position: "absolute",
@@ -50,10 +54,57 @@ export const style = {
     },
   },
   taskList: {
-    padding: "5px 5px 5px 5px",
+    padding: "5px 0px 5px 0px",
     backgroundColor: BASIC_WHITE,
     width: "100%",
     borderRadius: "5px",
     overFlow: "hidden",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+  },
+  infoText: {
+    width: "100%",
+    padding: "20px 5px 20px 5px",
+    textAlign: "center",
+  },
+  taskItem: {
+    width: "100%",
+    padding: "20px 10px 20px 10px",
+    cursor: "pointer",
+    alignItems: "center",
+    borderBottom: `1px solid ${BASIC_GRAY}`,
+  },
+  taskTextUnComplete: {
+    marginLeft: "15px",
+    color: BASIC_BLACK,
+    "&:hover": {
+      color: HOVER_BLUE,
+      fontWeight: "bold",
+    },
+  },
+  taskTextComplete: {
+    marginLeft: "15px",
+    textDecoration: "line-through",
+    color: BASIC_GRAY,
+  },
+  navigationText: {
+    padding: "5px 5px 5px 5px",
+    fontSize: "14px",
+    color: BASIC_GRAY,
+    cursor: "pointer",
+    "&:hover": {
+      color: HOVER_BLUE,
+      fontWeight: "bold",
+    },
+  },
+  navigationDeleteHover: {
+    "&:hover": {
+      color: DANGEROUS_RED,
+      fontWeight: "bold",
+    },
+  },
+  navigationWrapper: {
+    margin: "10px 10px 10px 10px",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
 };
