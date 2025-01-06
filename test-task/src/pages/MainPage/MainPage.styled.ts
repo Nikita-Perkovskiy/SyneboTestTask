@@ -1,4 +1,8 @@
-import { BASIC_PURPLE } from "../../config/constants/constants.ts";
+import {
+  BASIC_BLACK,
+  BASIC_PURPLE,
+  BASIC_WHITE,
+} from "../../config/constants/constants.ts";
 
 export const style = {
   headerFon: {
@@ -18,19 +22,19 @@ export const style = {
   },
   formTitle: {
     textTransform: "uppercase",
-    color: "white",
+    color: BASIC_WHITE,
     fontSize: "26px",
     fontWeight: "bold",
   },
   formInput: {
     minWidth: "300px",
-    backgroundColor: "white",
+    backgroundColor: BASIC_WHITE,
     borderRadius: "15px",
     "& .MuiInputBase-root": {
       width: "100%",
     },
     "& .MuiInputBase-input": {
-      color: "black",
+      color: BASIC_BLACK,
     },
     "& .MuiOutlinedInput-root": {
       borderRadius: "15px",
@@ -44,5 +48,12 @@ export const style = {
     "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
       borderColor: "transparent",
     },
+  },
+  taskList: {
+    padding: "5px 5px 5px 5px",
+    backgroundColor: BASIC_WHITE,
+    width: "100%",
+    borderRadius: "5px",
+    overFlow: "hidden",
   },
 };
